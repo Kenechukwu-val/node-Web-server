@@ -2,6 +2,7 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.PORT || 5500;
 let app = express();
 
 hbs.registerPartials(__dirname + '/views/partials');
@@ -57,6 +58,9 @@ app.get('/bad', ( req, res ) => {
 app.get('/ContactUs', (req, res) => {
     res.send('Contact US');
 })
-app.listen((5500), () => {
-    console.log('Server is up on port 5500');
+
+
+
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}`);
 });
